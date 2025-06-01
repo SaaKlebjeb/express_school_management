@@ -138,7 +138,7 @@ const remove=(req,res)=>{
   
       if (result.affectedRows !== 0) {
         // ✅ If delete successful, now fetch updated employee list
-        const fetchQuery = 'SELECT * FROM ebEmployee';
+        const fetchQuery = 'SELECT * FROM tbEmployee';
         db.query(fetchQuery, (err2, employees) => {
           if (err2) {
             return res.json({

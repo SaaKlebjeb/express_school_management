@@ -1,6 +1,6 @@
 const db=require('../util/db')
 const getAll=(req,res)=>{
-    db.query('SELECT * FROM student',(err,row)=>{//db.query('select-query',handler)
+    db.query('SELECT * FROM tbStudent',(err,row)=>{//db.query('select-query',handler)
         if(!err){
             res.json({
                 success:true,
@@ -21,7 +21,7 @@ const getAll=(req,res)=>{
 
 const getOne=(req,res)=>{
     const id=req.params.id;
-    const sql='select * from student where studentID=?'
+    const sql='select * from tbStudent where studentID=?'
     const params=[id];
     db.query(sql,params,(err,row)=>{//db.query('select-query',handler)
         if(!err){
